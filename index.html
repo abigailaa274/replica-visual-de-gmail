@@ -11,38 +11,661 @@
 </head>
 <body>
     <div class="menuSuperior">
-        <div class="contenedorInterno">
-            <a href="index.html" class="material-symbols-outlined botonMenuSuperior">menu</a>     <!--icono de las tres barritas-->
-            <a href="index.html"><img src="imagenes/logoGmail.png" alt="Logo de Gmail"></a>
-        </div>            
-        <div>                 <!--barra de busqueda-->
-            <button class="material-symbols-outlined">search</button>
-            <input type="text" placeholder="Buscar correo">
-            <button class="material-symbols-outlined">tune</button>
+        <div class="menuSuperior__left">
+            <button type="button" class="iconButton material-symbols-outlined botonMenuSuperior">menu</button>
+            <a href="index.html" class="logoLink">
+                <img src="imagenes/logoGmail.png" alt="Logo de Gmail" class="logoGmail">
+            </a>
         </div>
-        <button class="material-symbols-outlined">help</button>
-        <button class="material-symbols-outlined">settings</button>
-        <button class="material-symbols-outlined">
-stat_0</button>         <!--que me perdone Dios pero no tengo ganas de ponerme a buscar el icono especifico de gemini...-->
-        <button class="material-symbols-outlined">apps</button>
+
+        <div class="menuSuperior__search">
+            <span class="material-symbols-outlined searchIcon">search</span>
+            <input type="text" placeholder="Buscar correo" aria-label="Buscar correo">
+            <button type="button" class="iconButton material-symbols-outlined">tune</button>
+        </div>
+
+        <div class="menuSuperior__right">
+            <button type="button" class="iconButton material-symbols-outlined">help</button>
+            <button type="button" class="iconButton material-symbols-outlined">settings</button>
+            <button type="button" class="iconButton material-symbols-outlined">auto_awesome</button>
+            <button type="button" class="iconButton material-symbols-outlined">apps</button>
+            <button type="button" class="fotoUsuario">
+                <img src="imagenes/hamsterFeliz.jpeg" alt="Avatar de usuario">
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor principal que agrupa el menú lateral y el contenido central -->
+    <div class="appBody">
+        <aside class="menuLateral" aria-label="Menú lateral de Gmail">
+            <!-- Botón de redacción estilo Gmail -->
+            <button type="button" class="botonRedondo botonRedondo--compose" aria-label="Redactar">
+                <span class="material-symbols-outlined">edit</span>
+            </button>
+
+            <!-- Íconos principales del menú lateral -->
+            <div class="menuLateral__items">
+                <button type="button" class="botonIcono" aria-label="Recibidos">
+                    <span class="material-symbols-outlined">inbox</span>
+                    <span class="menuLateral__badge"></span>
+                </button>
+                <button type="button" class="botonIcono" aria-label="Destacados">
+                    <span class="material-symbols-outlined">star</span>
+                </button>
+                <button type="button" class="botonIcono" aria-label="Programados">
+                    <span class="material-symbols-outlined">schedule</span>
+                </button>
+                <button type="button" class="botonIcono" aria-label="Enviados">
+                    <span class="material-symbols-outlined">send</span>
+                    <span class="menuLateral__badge"></span>
+                </button>
+                <button type="button" class="botonIcono" aria-label="Borradores">
+                    <span class="material-symbols-outlined">insert_drive_file</span>
+                </button>
+                <button type="button" class="botonIcono" aria-label="Más opciones">
+                    <span class="material-symbols-outlined">expand_more</span>
+                </button>
+            </div>
+
+            <!-- Botón inferior para agregar contenido o expandir el menú -->
+            <button type="button" class="botonRedondo botonRedondo--add" aria-label="Agregar">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </aside>
+
+        <main class="contenido">
+
+            <!-- Barra de herramientas de la bandeja de entrada -->
+            <div class="barraHerramientas" aria-label="Barra de herramientas de bandeja">
+                <div class="barraHerramientas__izquierda">
+                    <label class="checkboxContainer">
+                        <input type="checkbox" aria-label="Seleccionar todos los correos">
+                        <span class="checkmark"></span>
+                    </label>
+                    <button type="button" class="iconButton" aria-label="Actualizar bandeja">
+                        <span class="material-symbols-outlined">refresh</span>
+                    </button>
+                    <button type="button" class="iconButton" aria-label="Más opciones">
+                        <span class="material-symbols-outlined">more_vert</span>
+                    </button>
+                </div>
+                
+                <div class="barraHerramientas__centro">
+                    <span class="barraHerramientas__texto">1-50 de 1.000+</span>
+                </div>
+                
+                <div class="barraHerramientas__derecha">
+                    <button type="button" class="iconButton" aria-label="Página anterior">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button type="button" class="iconButton" aria-label="Página siguiente">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                    <button type="button" class="iconButton" aria-label="Selector de idioma">
+                        <span class="material-symbols-outlined">language</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sección de pestañas de navegación -->
+            <nav class="pestanasNavegacion" aria-label="Navegación de categorías de correo">
+                <ul class="pestanasNavegacion__lista">
+                    <li class="pestanasNavegacion__item">
+                        <a href="#" class="pestanasNavegacion__enlace pestanasNavegacion__enlace--activo" aria-current="page">
+                            <span class="material-symbols-outlined pestanasNavegacion__icono">inbox</span>
+                            Principal
+                        </a>
+                    </li>
+                    <li class="pestanasNavegacion__item">
+                        <a href="#" class="pestanasNavegacion__enlace">
+                            <span class="material-symbols-outlined pestanasNavegacion__icono">local_offer</span>
+                            Promociones
+                        </a>
+                    </li>
+                    <li class="pestanasNavegacion__item">
+                        <a href="#" class="pestanasNavegacion__enlace">
+                            <span class="material-symbols-outlined pestanasNavegacion__icono">groups</span>
+                            Social
+                        </a>
+                    </li>
+                    <li class="pestanasNavegacion__item">
+                        <a href="#" class="pestanasNavegacion__enlace">
+                            <span class="material-symbols-outlined pestanasNavegacion__icono">notifications</span>
+                            Notificaciones
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Lista de mensajes de correo -->
+            <div class="listaMensajes" aria-label="Lista de correos electrónicos">
+                <article class="mensaje" aria-label="Correo de Emisor 1">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 1">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 1</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Promociones</span>
+                            </span>
+                            <span class="mensaje__hora">10:30</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 1</span>
+                            <span class="mensaje__resumen">Contenido 1</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 2">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 2</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Social</span>
+                            </span>
+                            <span class="mensaje__hora">09:15</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 2</span>
+                            <span class="mensaje__resumen">Contenido 2</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 3">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 3</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Notificaciones</span>
+                            </span>
+                            <span class="mensaje__hora">08:45</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 3</span>
+                            <span class="mensaje__resumen">Contenido 3</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 4">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 4">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 4</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Principal</span>
+                            </span>
+                            <span class="mensaje__hora">07:20</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 4</span>
+                            <span class="mensaje__resumen">Contenido 4</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 5">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 5</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Promociones</span>
+                            </span>
+                            <span class="mensaje__hora">06:10</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 5</span>
+                            <span class="mensaje__resumen">Contenido 5</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 6">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 6">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 6</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Social</span>
+                            </span>
+                            <span class="mensaje__hora">22:45</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 6</span>
+                            <span class="mensaje__resumen">Contenido 6</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 7">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 7">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 7</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Notificaciones</span>
+                            </span>
+                            <span class="mensaje__hora">21:30</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 7</span>
+                            <span class="mensaje__resumen">Contenido 7</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 8">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 8">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 8</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Principal</span>
+                            </span>
+                            <span class="mensaje__hora">20:15</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 8</span>
+                            <span class="mensaje__resumen">Contenido 8</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 9">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 9">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 9</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Promociones</span>
+                            </span>
+                            <span class="mensaje__hora">19:00</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 9</span>
+                            <span class="mensaje__resumen">Contenido 9</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 10">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 10">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 10</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Social</span>
+                            </span>
+                            <span class="mensaje__hora">18:30</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 10</span>
+                            <span class="mensaje__resumen">Contenido 10</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 11">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 11">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 11</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Notificaciones</span>
+                            </span>
+                            <span class="mensaje__hora">17:45</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 11</span>
+                            <span class="mensaje__resumen">Contenido 11</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 12">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 12">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 12</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Principal</span>
+                            </span>
+                            <span class="mensaje__hora">16:20</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 12</span>
+                            <span class="mensaje__resumen">Contenido 12</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 13">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 13">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 13</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Promociones</span>
+                            </span>
+                            <span class="mensaje__hora">15:10</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 13</span>
+                            <span class="mensaje__resumen">Contenido 13</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 14">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 14">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 14</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Social</span>
+                            </span>
+                            <span class="mensaje__hora">14:30</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 14</span>
+                            <span class="mensaje__resumen">Contenido 14</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 15">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 15">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 15</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Notificaciones</span>
+                            </span>
+                            <span class="mensaje__hora">13:45</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 15</span>
+                            <span class="mensaje__resumen">Contenido 15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 16">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 16">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 16</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Principal</span>
+                            </span>
+                            <span class="mensaje__hora">12:20</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 16</span>
+                            <span class="mensaje__resumen">Contenido 16</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 17">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 17">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 17</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Promociones</span>
+                            </span>
+                            <span class="mensaje__hora">11:10</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 17</span>
+                            <span class="mensaje__resumen">Contenido 17</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 18">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 18">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 18</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Social</span>
+                            </span>
+                            <span class="mensaje__hora">10:30</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 18</span>
+                            <span class="mensaje__resumen">Contenido 18</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 19">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 19">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 19</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Notificaciones</span>
+                            </span>
+                            <span class="mensaje__hora">09:15</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 19</span>
+                            <span class="mensaje__resumen">Contenido 19</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mensaje" aria-label="Correo de Emisor 20">
+                    <div class="mensaje__seleccion">
+                        <label class="checkboxContainer">
+                            <input type="checkbox" aria-label="Seleccionar mensaje de Emisor 20">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="mensaje__importancia">
+                        <span class="material-symbols-outlined mensaje__estrella">star</span>
+                    </div>
+                    <div class="mensaje__contenido">
+                        <div class="mensaje__cabecera">
+                            <span class="mensaje__emisor">Emisor 20</span>
+                            <span class="mensaje__etiquetas">
+                                <span class="mensaje__etiqueta">Principal</span>
+                            </span>
+                            <span class="mensaje__hora">08:45</span>
+                        </div>
+                        <div class="mensaje__cuerpo">
+                            <span class="mensaje__asunto">Título 20</span>
+                            <span class="mensaje__resumen">Contenido 20</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="menuDerecha" aria-label="Panel derecho de accesos rápidos">
+            <button type="button" class="botonIcono menuDerecha__item" aria-label="Calendario">
+                <span class="material-symbols-outlined">calendar_month</span>
+            </button>
+            <button type="button" class="botonIcono menuDerecha__item" aria-label="Keep">
+                <span class="material-symbols-outlined">lightbulb</span>
+            </button>
+            <button type="button" class="botonIcono menuDerecha__item" aria-label="Tareas">
+                <span class="material-symbols-outlined">check_circle</span>
+            </button>
+            <button type="button" class="botonIcono menuDerecha__item" aria-label="Contactos">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+
+            <div class="menuDerecha__divider"></div>
+
+            <button type="button" class="botonRedondo botonRedondo--add menuDerecha__add" aria-label="Agregar">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <button type="button" class="botonIcono menuDerecha__item menuDerecha__collapse" aria-label="Mostrar más">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </aside>
+
         
-        <button class="fotoUsuario"><img src="imagenes/hamsterFeliz.jpeg" alt=""></button>
     </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Recibidos (1)</a></li>
-            <li><a href="enviados.html">Enviados (0)</a></li>
-            <li><a href="borradores.html">Borradores (0)</a></li>
-            <li><a href="papelera.html">Papelera (0)</a></li>
-        </ul>
-    </nav>
-    <div class="botones">
-
-    </div>
-
-    <div class ="pestanias">
-
-    </div>
-    <div class ="mensajes"></div>
 </body>
 </html>
